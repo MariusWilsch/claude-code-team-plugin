@@ -2,6 +2,8 @@
   "name": "claude-code-team-plugin",
   "version": "2026-01-14",
   "description": "Team onboarding plugin with clarity workflow commands, worktree skill, and commit guards",
-  "author": "Marius Wilsch",
-  "hooks": "../hooks/hooks.json"
+  "author": {
+    "name": "Marius Wilsch"
+  },
+  "hooks": "./hooks/hooks.json"
 }
