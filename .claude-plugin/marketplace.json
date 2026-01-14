@@ -1,0 +1,15 @@
+{
+  "name": "wilsch-ai-plugins",
+  "version": "2026-01-14",
+  "description": "Wilsch AI team plugins for Claude Code",
+  "owner": {
+    "name": "Marius Wilsch",
+    "email": "marius@wilsch-ai.com"
+  },
+  "plugins": [
+    {
+      "name": "claude-code-team-plugin",
+      "source": "./plugins/claude-code-team-plugin"
+    }
+  ]
+}
