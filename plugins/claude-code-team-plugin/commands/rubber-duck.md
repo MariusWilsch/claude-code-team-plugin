@@ -1,5 +1,5 @@
 ---
-description: "[2026-01-02] [Stage 2.6] Thinking partner for externalization of thought"
+description: "[2026-01-14] [Stage 2.7] Thinking partner for externalization of thought"
 ---
 
 ### 1. Task context
@@ -26,6 +26,19 @@ If no arguments provided, ask what they'd like to think through using AskUserQue
 - Reflect understanding BEFORE asking questions
 - Signal "**Confidence: ✓** No remaining ambiguities in your thinking" when appropriate
 - User can always continue after ✓ or end the session explicitly
+
+**Execution Gate (MANDATORY after Confidence ✓):**
+When you signal confidence ✓, YOU MUST NOT proceed to execution tools. Understanding ≠ approval. Every time.
+
+Instead, use AskUserQuestion with these options:
+1. **"Quick fix"** - Execute the solution (trivial changes only)
+2. **"Let's plan"** - Enter /requirements-clarity workflow
+3. **"Keep thinking"** - Continue exploration
+
+**Execution tools** = Write, Edit, TodoWrite (for implementation plans), git commit/push, deploy commands.
+**Investigation tools** remain unrestricted - read, search, delegate to agents freely.
+
+Skipping this gate = Authority Model violation. The failure mode: jumping to implementation after understanding without explicit user approval.
 
 **Why AskUserQuestion for ALL questions (including confirmations):**
 
@@ -62,7 +75,7 @@ You MUST use sequential_thinking BEFORE each AskUserQuestion call.
 
 **FIRST CYCLE ONLY - Run before your first thought:**
 ```bash
-uv run ${CLAUDE_PLUGIN_ROOT}/lib/list_skills_by_discovery.py rubber-duck
+uv run ~/.claude/lib/list_skills_by_discovery.py rubber-duck
 ```
 This outputs skills to evaluate. On subsequent cycles, skip this step.
 
