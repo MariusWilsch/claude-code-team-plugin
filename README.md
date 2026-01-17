@@ -4,8 +4,8 @@ Team onboarding plugin with clarity workflow commands, worktree skill, and commi
 
 ## Install
 
-```bash
-claude plugin add MariusWilsch/claude-code-team-plugin
+```
+/plugin marketplace add MariusWilsch/claude-code-team-plugin
 ```
 
 ## Contents
