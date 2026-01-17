@@ -50,6 +50,11 @@ npm install -g supabase
 supabase login
 ```
 
+**hand-picked-tools MCP** (AI tools):
+```bash
+claude mcp add hand-picked-tools --transport http --scope user https://metamcp.iitr-cloud.de/metamcp/hand-picked-tools/mcp
+```
+
 ## Install
 
 ```
