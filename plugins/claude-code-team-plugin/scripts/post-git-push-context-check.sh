@@ -27,8 +27,11 @@ if [[ -z "$TRANSCRIPT_PATH" || ! -f "$TRANSCRIPT_PATH" ]]; then
     exit 0
 fi
 
+# Get plugin root (set by Claude Code when running plugin hooks)
+PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$0")")}"
+
 # Run context usage calculation
-RESULT=$(uv run ~/.claude/lib/context_usage.py "$TRANSCRIPT_PATH" 2>/dev/null)
+RESULT=$(uv run "$PLUGIN_ROOT/lib/context_usage.py" "$TRANSCRIPT_PATH" 2>/dev/null)
 
 if [[ -z "$RESULT" ]]; then
     exit 0
