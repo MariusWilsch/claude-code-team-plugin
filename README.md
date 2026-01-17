@@ -6,6 +6,16 @@ Team onboarding plugin with clarity workflow commands, worktree skill, and commi
 
 Install these before using the plugin:
 
+**gh** (GitHub CLI):
+```bash
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo apt update
+sudo apt install gh
+gh auth login
+```
+
 **uv** (Python package manager):
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -18,21 +28,26 @@ cd git-worktree-runner
 ./install.sh
 ```
 
-**Homebrew** (package manager - required for Supabase CLI):
+**Homebrew** (package manager for WSL):
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
-source ~/.bashrc
-```
+# Install build-essential first (required for WSL)
+sudo apt-get update
+sudo apt-get install build-essential
 
-**gcc** (required to build Supabase on WSL/Linux):
-```bash
-brew install gcc
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Add to PATH
+test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+echo "eval \$($(brew --prefix)/bin/brew shellenv)" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 **Supabase CLI** (database operations):
 ```bash
-brew install supabase/tap/supabase
+npm install -g supabase
+supabase login
 ```
 
 ## Install
