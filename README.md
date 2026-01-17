@@ -18,6 +18,7 @@ claude plugin add MariusWilsch/claude-code-team-plugin
 | `/requirements-clarity` | Disambiguate WHAT to build |
 | `/implementation-clarity` | Plan HOW to build |
 | `/evaluation-clarity` | Define success criteria |
+| `/ac-verify` | Verify acceptance criteria (separate session) |
 | `/rubber-duck` | Thinking partner (Stage 2.7 with execution gate) |
 | `/flag-for-improvement` | Capture system issues |
 | `/issue-comment` | Post GitHub issue comments |
