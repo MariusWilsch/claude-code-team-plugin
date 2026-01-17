@@ -55,6 +55,30 @@ supabase login
 claude mcp add hand-picked-tools --transport http --scope user https://metamcp.iitr-cloud.de/metamcp/hand-picked-tools/mcp
 ```
 
+**Google Chrome** (for Chrome DevTools MCP):
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt --fix-broken install
+```
+
+**mcp2rest** (MCP gateway - optional):
+```bash
+npm install -g mcp2rest
+
+# Install as service (use env to preserve PATH for nvm users)
+sudo env "PATH=$PATH" npx mcp2rest service install
+
+# Or run in foreground
+npx mcp2rest start
+
+# Add Chrome DevTools server
+npx mcp2rest add chrome chrome-devtools-mcp@latest
+
+# Verify
+curl http://localhost:28888/health
+```
+
 ## Install
 
 ```
