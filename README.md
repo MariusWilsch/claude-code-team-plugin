@@ -2,6 +2,27 @@
 
 Team onboarding plugin with clarity workflow commands, worktree skill, and commit guards.
 
+## Dependencies
+
+Install these before using the plugin:
+
+**uv** (Python package manager):
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**git-worktree-runner** (worktree management):
+```bash
+git clone https://github.com/coderabbitai/git-worktree-runner.git
+cd git-worktree-runner
+./install.sh
+```
+
+**Supabase CLI** (database operations):
+```bash
+brew install supabase/tap/supabase
+```
+
 ## Install
 
 ```
