@@ -131,7 +131,9 @@ def main():
 
     # Detect environment
     pwd_path = Path.cwd()
-    env_type = "Local" if "/Users/verdant" in str(pwd_path) else "Remote"
+    # Detect local vs remote: local if path starts with user's home directory
+    home_dir = str(Path.home())
+    env_type = "Local" if str(pwd_path).startswith(home_dir) or str(pwd_path).startswith("/mnt/") else "Remote"
 
     # Extract folder name and detect label
     folder_name = pwd_path.name
