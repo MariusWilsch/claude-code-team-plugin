@@ -92,6 +92,33 @@ supabase login
 - `fetch_issue_context.py` - GitHub issue fetcher
 - `list_skills_by_discovery.py` - Skill discovery helper
 
+## Recommended Settings
+
+Plugins can't include permissions. Add these to your `~/.claude/settings.json`:
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh:*)", "Bash(git:*)", "Bash(uv:*)",
+      "mcp__hand-picked-tools__**",
+      "Skill(worktree)", "Skill(hippocampus)",
+      "SlashCommand(/rubber-duck:*)"
+    ],
+    "deny": [
+      "Bash(git push origin --delete:*)",
+      "Bash(git branch -D:*)"
+    ],
+    "ask": [
+      "Bash(rm:*)", "Bash(gh pr create:*)",
+      "Bash(gh issue create:*)"
+    ]
+  }
+}
+```
+
+See full recommended settings: [settings-template.md](docs/settings-template.md)
+
 ## Protocol
 
 Includes `CLAUDE.md` with:
