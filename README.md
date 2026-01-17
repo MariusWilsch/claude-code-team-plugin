@@ -18,6 +18,18 @@ cd git-worktree-runner
 ./install.sh
 ```
 
+**Homebrew** (package manager - required for Supabase CLI):
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+**gcc** (required to build Supabase on WSL/Linux):
+```bash
+brew install gcc
+```
+
 **Supabase CLI** (database operations):
 ```bash
 brew install supabase/tap/supabase
